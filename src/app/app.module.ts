@@ -5,26 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { UserprofileComponent } from './dashboard/userprofile/userprofile.component';
-import { ShowContactComponent } from './dashboard/contact/show-contact/show-contact.component';
-import { AddContactComponent } from './dashboard/contact/add-contact/add-contact.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { HttpService } from './services/http.service';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    UserprofileComponent,
-    AddContactComponent,
-    ShowContactComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DashboardModule,
+    ShareModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
