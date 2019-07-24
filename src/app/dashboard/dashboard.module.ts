@@ -6,13 +6,14 @@ import { ShowContactComponent } from './contact/show-contact/show-contact.compon
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShareModule } from '../share/share.module';
+import { Dashboardguard } from '../services/dashboardguard.service';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'showList', pathMatch: 'full' },
-  { path: 'userProfile', component: UserprofileComponent },
-  { path: 'addContact', component: AddContactComponent },
-  { path: 'showList', component: ShowContactComponent }
+  { path: 'userProfile', component: UserprofileComponent, canActivate: [Dashboardguard] },
+  { path: 'addContact', component: AddContactComponent, canActivate: [Dashboardguard] },
+  { path: 'showList', component: ShowContactComponent, canActivate: [Dashboardguard] }
 ];
 
 

@@ -1,3 +1,4 @@
+import { Dashboardguard } from './services/dashboardguard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -21,7 +22,7 @@ import { ShareModule } from './share/share.module';
     DashboardModule,
     ShareModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, Dashboardguard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
