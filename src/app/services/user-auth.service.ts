@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  constructor(private route: Router) { }
   isUserAuthenticated() {
     return (localStorage.getItem('token')) ? true : (sessionStorage.getItem('token')) ? true : false;
   }
@@ -23,10 +25,12 @@ export class UserService {
     if (localStorage.getItem('type')) {
       localStorage.removeItem('token');
       localStorage.removeItem('_id');
+      this.route.navigate(['/login'])
       return;
     }
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('_id');
+    this.route.navigate(['/login'])
   }
 
   getData(key: string) {
