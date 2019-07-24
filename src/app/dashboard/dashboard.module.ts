@@ -1,3 +1,4 @@
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { AddContactComponent } from './contact/add-contact/add-contact.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
     CommonModule,
     ShareModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers: [NgbActiveModal]
 })
 export class DashboardModule { }
