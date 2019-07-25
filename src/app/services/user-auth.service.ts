@@ -11,8 +11,10 @@ export class UserService {
     return (localStorage.getItem('token')) ? true : (sessionStorage.getItem('token')) ? true : false;
   }
   saveInLocalStorage(data){
+    console.log(data.token)
+    // console.log(data.userId);
     localStorage.setItem('token', data.token);
-    localStorage.setItem('_id', data.userId);
+    localStorage.setItem('userId', data.userId);
     localStorage.setItem('type', 'local');
   }
   saveInSessionStorage(data){

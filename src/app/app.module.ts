@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpService } from './services/http.service';
 import { DashboardGuard } from './services/dashboardguard.service';
 import { DashboardModule } from './dashboard/dashboard.module';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    DashboardModule
+    DashboardModule,
+    HttpClientModule
   ],
   providers: [HttpService, DashboardGuard],
   bootstrap: [AppComponent]
