@@ -21,9 +21,9 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes)
   ],
+  exports: [RouterModule],
   providers: [NgbActiveModal]
 })
 export class DashboardModule { }
-
 
 

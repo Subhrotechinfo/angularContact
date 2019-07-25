@@ -1,13 +1,23 @@
-<div class="container col-md-8">
-        <form >
-            <div class="form-group">
-                <label for="contactName">Contact Name:</label>
-                <input type="text" class="form-control" id="contactname" placeholder="Enter Contact Name" name="contactname">
-              </div>
-            <div class="form-group">
-              <label for="mobile">Mobile Number:</label>
-              <input type="mobile" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile">
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
+<app-navbar></app-navbar>
+    <div class="container col-md-8">
+      <form [formGroup]="addContact" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="contactName">Contact Name: <sup class="error">*</sup></label>
+          <input type="text" formControlName="contactName" class="form-control" id="contactName" placeholder="Enter contact Name">
+          <div class="error" *ngIf="submitted && controls.contactName.invalid">
+            <span class="error" *ngIf="controls.contactName.errors.required">contactName is required </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number: <sup class="error">*</sup></label>
+          <input type="text" formControlName="mobile" class="form-control" id="mobile" placeholder="Enter mobile">
+          <div class="error" *ngIf="submitted && controls.mobile.invalid">
+            <span class="error" *ngIf="controls.mobile.errors.required">mobile is required </span>
+            <span class="error" *ngIf="controls.mobile.errors.maxLength">Length is 10 </span>
+            <span class="error" *ngIf="controls.mobile.errors.minLength">Length is 10 </span>
+            <span class="error" *ngIf="controls.mobile.errors.pattern">Should be a valid numbers </span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
     </div>

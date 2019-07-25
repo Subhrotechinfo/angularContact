@@ -7,7 +7,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'dashboard', loadChildren: './dashboard/dashboard.module.ts#DashboardModule'}
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'},
+  { path: '**', redirectTo: 'login'}
 ];
 
 @NgModule({
