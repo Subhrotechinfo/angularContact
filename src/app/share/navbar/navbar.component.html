@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" [routerLink]="['/showList']">Contact list</a>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/showList']" routerLinkActive="active">Contact list</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/addContact']">Add Contact</a>
+      <a class="nav-link" [routerLink]="['/addContact']" routerLinkActive="active">Add Contact</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/userProfile']">User Profile</a>
+      <a class="nav-link" [routerLink]="['/userProfile']" routerLinkActive="active">User Profile</a>
     </li>
   </ul>
-  <button class="btn btn-default" (click)="logout()">Logout</button>
+  <button class="btn btn-warning" (click)="logout()">Logout</button>
 </nav>

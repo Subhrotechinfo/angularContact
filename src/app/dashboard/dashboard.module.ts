@@ -9,13 +9,18 @@ import { ShareModule } from '../share/share.module';
 import { Dashboardguard } from '../services/dashboardguard.service';
 
 
+// const routes: Routes = [
+//   { path: '', redirectTo: 'showList', pathMatch: 'full' },
+//   { path: 'userProfile', component: UserprofileComponent, canActivate: [Dashboardguard] },
+//   { path: 'addContact', component: AddContactComponent, canActivate: [Dashboardguard] },
+//   { path: 'showList', component: ShowContactComponent, canActivate: [Dashboardguard] }
+// ];
 const routes: Routes = [
-  { path: '', redirectTo: 'showList', pathMatch: 'full' },
-  { path: 'userProfile', component: UserprofileComponent, canActivate: [Dashboardguard] },
-  { path: 'addContact', component: AddContactComponent, canActivate: [Dashboardguard] },
-  { path: 'showList', component: ShowContactComponent, canActivate: [Dashboardguard] }
+  { path: '', redirectTo: '/showList', pathMatch: 'full' },
+  { path: 'userProfile', component: UserprofileComponent },
+  { path: 'addContact', component: AddContactComponent },
+  { path: 'showList', component: ShowContactComponent }
 ];
-
 
 @NgModule({
   declarations: [
