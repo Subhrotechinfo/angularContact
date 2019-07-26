@@ -13,9 +13,7 @@
           <input type="text" formControlName="mobile" class="form-control" id="mobile" placeholder="Enter mobile">
           <div class="error" *ngIf="submitted && controls.mobile.invalid">
             <span class="error" *ngIf="controls.mobile.errors.required">mobile is required </span>
-            <span class="error" *ngIf="controls.mobile.errors.maxLength">Length is 10 </span>
-            <span class="error" *ngIf="controls.mobile.errors.minLength">Length is 10 </span>
-            <span class="error" *ngIf="controls.mobile.errors.pattern">Should be a valid numbers </span>
+            <span class="error" *ngIf="controls.mobile.errors.pattern">Should be a valid 10 digit numbers </span>
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Save</button>

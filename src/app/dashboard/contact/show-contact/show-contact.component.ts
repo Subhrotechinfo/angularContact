@@ -57,7 +57,7 @@ export class ShowContactComponent implements OnInit {
         if(res.success ==true ){
           this.toast.successtoast(res.msg);
         }else {
-          this.toast.errortoast('Not updated');
+          this.toast.errortoast('Mobile no already exist');
         }
       });
   }

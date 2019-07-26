@@ -25,7 +25,7 @@ export class AddContactComponent implements OnInit {
   ngOnInit() {
     this.addContact = this.fb.group({
       name: ['', Validators.required],
-      mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9 ]*')]]
+      mobile: ['', [Validators.required, Validators.pattern('[0-9]{10,}')]]
     });
   }
   onSubmit(){

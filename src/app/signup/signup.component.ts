@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  onSubmit(){
+  onSubmit() {
       console.log(this.signupForm.value);
       this.submitted = true;
       if (this.signupForm.invalid) { return; }
