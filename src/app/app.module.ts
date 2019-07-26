@@ -10,6 +10,7 @@ import { HttpService } from './services/http.service';
 import { DashboardGuard } from './services/dashboardguard.service';
 import { DashboardModule } from './dashboard/dashboard.module';
 import {  HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import {  HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     DashboardModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [HttpService, DashboardGuard],
   bootstrap: [AppComponent]

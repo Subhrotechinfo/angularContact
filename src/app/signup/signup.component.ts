@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
         .subscribe((res)=>{
           if(res.success == true){
               this.alert.successtoast('SuccessFully Signed up');
-              this.route.navigate(['/login'])
+              this.route.navigate(['/login']);
           } else {
             this.alert.successtoast('Sign Up Failed');
           }

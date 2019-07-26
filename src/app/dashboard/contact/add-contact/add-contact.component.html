@@ -2,10 +2,10 @@
     <div class="container col-md-8">
       <form [formGroup]="addContact" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="contactName">Contact Name: <sup class="error">*</sup></label>
-          <input type="text" formControlName="contactName" class="form-control" id="contactName" placeholder="Enter contact Name">
-          <div class="error" *ngIf="submitted && controls.contactName.invalid">
-            <span class="error" *ngIf="controls.contactName.errors.required">contactName is required </span>
+          <label for="name">Contact Name: <sup class="error">*</sup></label>
+          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter contact Name">
+          <div class="error" *ngIf="submitted && controls.name.invalid">
+            <span class="error" *ngIf="controls.name.errors.required">contactName is required </span>
           </div>
         </div>
         <div class="form-group">

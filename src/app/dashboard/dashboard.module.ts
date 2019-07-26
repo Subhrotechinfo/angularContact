@@ -6,7 +6,7 @@ import { ShowContactComponent } from './contact/show-contact/show-contact.compon
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
-
+import {MatDialogModule} from '@angular/material/dialog';
 const routes: Routes = [
   {path: '' , redirectTo: 'userProfile', pathMatch: 'full'},
   {path: 'userProfile', component: UserprofileComponent },
@@ -19,7 +19,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatDialogModule
   ],
   exports: [RouterModule],
   providers: [NgbActiveModal]

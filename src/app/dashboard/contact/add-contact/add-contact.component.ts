@@ -1,5 +1,9 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user-auth.service';
+import { HttpService } from 'src/app/services/http.service';
+import { AlertService } from 'src/app/services/alert.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-contact',
@@ -9,11 +13,18 @@ import { Component, OnInit } from '@angular/core';
 export class AddContactComponent implements OnInit {
   addContact: FormGroup
   submitted: boolean;
-  constructor(private fb: FormBuilder) { }
+  loggedInUserToken;
+  constructor(private fb: FormBuilder,
+    private auth: UserService,
+    private service: HttpService,
+    private toast: AlertService,
+    private route: Router) {
+    this.loggedInUserToken = this.auth.getData('token');
+   }
 
   ngOnInit() {
     this.addContact = this.fb.group({
-      contactName: ['', Validators.required],
+      name: ['', Validators.required],
       mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9 ]*')]]
     });
   }
@@ -21,7 +32,15 @@ export class AddContactComponent implements OnInit {
     console.log(this.addContact.value);
     this.submitted = true;
     if (this.addContact.invalid) { return ;}
-
+    this.service.fetchData('addContact', this.loggedInUserToken, this.addContact.value)
+      .subscribe((res) => {
+        if(res.success == true){
+            this.toast.infotoast(res.msg);
+            this.route.navigate(['dashboard/showList']);
+        } else {
+            this.toast.errortoast('Not updated');
+        }
+      });
 
   }
   get controls() {
