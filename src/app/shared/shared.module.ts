@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
     FormsModule,
     ReactiveFormsModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    RouterModule
   ],
   exports:[
     NavbarComponent,

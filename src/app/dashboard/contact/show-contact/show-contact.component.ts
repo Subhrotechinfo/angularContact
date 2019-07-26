@@ -36,7 +36,8 @@ export class ShowContactComponent implements OnInit {
     this.service.fetchData('getAllContacts', this.loggedInUserToken)
       .subscribe((res) => {
         this.showContactDetails = res.data;
-          console.log(res);
+        this.toast.successtoast('All data Fetched');
+        console.log(res);
       });
   }
   onEdit(data) {
@@ -68,6 +69,11 @@ export class ShowContactComponent implements OnInit {
     console.log('Delete Ready');
     this.service.postData('deleteSingleContact', {'_id':this.user_Id})
       .subscribe((res) => {
+        if(res.success == true){
+          this.toast.successtoast(res.msg);
+        } else {
+          this.toast.errortoast(res.msg)
+        }
         console.log(res);
       });
   }
